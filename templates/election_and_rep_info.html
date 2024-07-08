@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election and Representative Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .info {
+            margin-top: 20px;
+        }
+        .representatives {
+            margin-top: 20px;
+        }
+        .representative {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Election and Representative Information</h1>
+        <div class="info">
+            <p><strong>Election Name:</strong> {{ election_name }}</p>
+            <p><strong>Polling Location:</strong> {{ polling_location }}</p>
+        </div>
+        <div class="representatives">
+            <h2>Representatives:</h2>
+            {% if representatives %}
+                {% for rep in representatives %}
+                    <div class="representative">
+                        <p><strong>Name:</strong> {{ rep.name }}</p>
+                        <p><strong>Party:</strong> {{ rep.party }}</p>
+                        <p><strong>Office:</strong> {{ rep.office }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No representative information available.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
