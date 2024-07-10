@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose port 5000 to the outside world
 EXPOSE 5000
 
-# Define environment variables
-ENV GOOGLE_CIVIC_API_KEY="your_actual_api_key_here"
+# Define environment variables (if any)
+# ENV YOUR_ENV_VARIABLE your_value
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
